@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garasi Bewok</title>
+    <link rel="icon" href="../garasibewok/public/images/logo/GB Logo.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../garasibewok/public/css/styles.css">
+    <link rel="stylesheet" href="../garasibewok/public/css/global.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Section -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/graphik-trial" rel="stylesheet">
+
+</head>
+<body class="body-font mb-20">
+
+    <!-- Navbar -->
+    <nav class="navbar mb-8">
+        <div class="logo">GARASIBEWOK</div>
+        <ul>
+            <li class="underline"><a href="index.php?page=index">Beranda</a></li>
+            <li><a href="index.php?page=layanan">Layanan</a></li>
+            <li><a href="index.php?page=parts">Parts</a></li>
+            <li><a href="index.php?page=tentang-kami">Tentang Kami</a></li>
+
+            <?php if (isset($_SESSION['nama'])): ?>
+                <a href="../garasibewok/public/php/logout.php" class="ml-6 px-4 py-2 bg-black text-white focus:outline-none">
+                    Logout
+                </a>
+                <div class="flex items-center px-4 py-2 bg-white text-black border border-black focus:outline-none">
+                    <i class="fas fa-user mr-2"></i>
+                    <?php echo htmlspecialchars($_SESSION['nama']); ?>
+                </div>
+            <?php else: ?>
+                <a href="../garasibewok/auth/login.html" class="ml-6 px-4 py-2 bg-black text-white focus:outline-none">
+                    Login
+                </a>
+            <?php endif; ?>
+          
+        </ul>
+    </nav>
+
+    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+        <!-- Header Carousel -->
+        <div class="relative h-56 overflow-hidden md:h-[30rem]">
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="../garasibewok/public/images/beranda/carousel1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <div class="carousel-caption w-full h-full bg-black/50 flex justify-center items-center">
+                    Layanan service motor terbaik hanya di<span class="font-bold italic mx-2"> GARASIBEWOK</span>
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="../garasibewok/public/images/beranda/carousel2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <div class="carousel-caption w-full h-full bg-black/50 flex justify-center items-center">
+                    Motor kamu rusak?<span class="font-bold italic mx-2"> GARASIBEWOK</span> solusinya!
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="../garasibewok/public/images/beranda/carousel3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <div class="carousel-caption w-full h-full bg-black/50 flex justify-center items-center">
+                    Butuh parts motor berkualitas?<span class="font-bold italic mx-2">GARASIBEWOK</span> aja
+                </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="../garasibewok/public/images/beranda/carousel4.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <div class="carousel-caption w-full h-full bg-black/50 flex justify-center items-center">
+                    Nikmati layanan cepat dan berkualitas kami!
+                </div>
+            </div>
+        </div>
+        <!-- Slider indicators -->
+        <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-10 h-10">
+                <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-width="2" d="M5 1 1 5l4 4"/>
+                </svg>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-10 h-10">
+                <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-width="2" d="M1 1l4 4-4 4"/>
+                </svg>
+            </span>
+        </button>
+    </div>      
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1 class="text-black">Selamat Datang di <span class="font-bold text-black italic">GARASIBEWOK</span></h1>
+        <p>Solusi Terbaik untuk Segala Kebutuhan Kendaraan Roda Dua Anda. Layanan Berkualitas dan Suku Cadang Terbaik untuk Performa Maksimal!</p>
+    </div>
+
+    <!-- Services Section -->
+    <div class="bg-black/80 mt-8 py-5">
+        <div class="px-10 flex flex-col justify-center text-white">
+            <h2 class="text-start font-semibold text-3xl">Rekomendasi Layanan Terbaik <span class="font-bold italic">GARASIBEWOK</span></h2>
+            <p class="text-start">Kami menyediakan rekomendasi layanan untuk referensi anda dalam memilih layanan dengan lebih mudah.</p>
+        </div>
+
+        <div class="mt-5 px-10 flex flex-wrap justify-start gap-10">
+
+            <!-- Card 1 -->
+            <div class="max-w-sm bg-white border border-gray-300 rounded-lg drop-shadow-md transition duration-300 ease-in-out hover:scale-105">
+                <a href="#">
+                    <img class="rounded-t-lg w-full h-72 object-cover" src="../garasibewok/public/images/layanan/tune up.jpg" alt="" />
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Overall Tuning Up (OTU)</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700">Penggantian oli mesin, pembersihan sistem bahan bakar, pengecekan sistem kelistrikan, perawatan sistem rem, dan kondisi mesin.</p>
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black rounded-lg focus:outline-none">
+                        Baca lebih lanjut
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="max-w-sm bg-white border border-gray-300 rounded-lg drop-shadow-md transition duration-300 ease-in-out hover:scale-105">
+                <a href="#">
+                    <img class="rounded-t-lg w-full h-72 object-cover" src="../garasibewok/public/images/layanan/ganti-oli.jpg" alt="" />
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Pergantian Oli</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700">Layanan penggantian oli mesin untuk menjaga performa mesin, kebersihan internal, dan mencegah kerusakan akibat pelumasan yang buruk.</p>
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black rounded-lg focus:outline-none">
+                        Baca lebih lanjut
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="max-w-sm bg-white border border-gray-300 rounded-lg drop-shadow-md transition duration-300 ease-in-out hover:scale-105">
+                <a href="#">
+                    <img class="rounded-t-lg w-full h-72 object-cover" src="../garasibewok/public/images/layanan/kampas-rem.jpg" alt="" />
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Pergantian Kampas Rem</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700">Perawatan sistem pengereman dengan mengganti kampas rem yang sudah aus. Juga melibatkan pengecekan sistem pendukung rem lainnya.</p>
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black rounded-lg focus:outline-none">
+                        Baca lebih lanjut
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <a href="index.php?page=layanan" class="flex justify-center items-center">
+                <p class="text-white">Lihat semua</p>
+                <svg class="rtl:rotate-180 w-5 h-5 ms-3 pt-1 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Parts Section -->
+    <div class="bg-black/90 mt-8 py-5">
+        <div class="px-10 flex flex-col justify-center text-white">
+            <h2 class="text-start font-semibold text-3xl">Rekomendasi Parts Terbaik <span class="font-bold italic">GARASIBEWOK</span></h2>
+            <p class="text-start">Kami menyediakan rekomendasi layanan untuk referensi anda dalam memilih layanan dengan lebih mudah.</p>
+        </div>
+
+        <div class="mt-5 px-10 flex flex-wrap justify-start gap-10">
+
+            <!-- Card 1 -->
+            <div class="max-w-sm bg-white border border-gray-300 rounded-lg drop-shadow-md transition duration-300 ease-in-out hover:scale-105">
+                <a href="#">
+                    <img class="rounded-t-lg w-full h-72 object-cover" src="../garasibewok/public/images/parts/paketan head.jpg" alt="" />
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Head SUMRacing + Valve</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700">Kepala silinder SUMRacing lengkap dengan katup yang dirancang untuk mendukung performa motor balap. Memberikan aliran udara yang lebih baik dan daya output yang maksimal.</p>
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black rounded-lg focus:outline-none">
+                        Beli Sekarang
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="max-w-sm bg-white border border-gray-300 rounded-lg drop-shadow-md transition duration-300 ease-in-out hover:scale-105">
+                <a href="#">
+                    <img class="rounded-t-lg w-full h-72 object-cover" src="../garasibewok/public/images/parts/blok-seher.jpg" alt="" />
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Blok MOTO1 + Casting Piston</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700">Blok mesin berkualitas tinggi dilengkapi dengan piston casting yang presisi. Cocok untuk meningkatkan performa mesin motor dengan daya tahan optimal dan efisiensi maksimal.</p>
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black rounded-lg focus:outline-none">
+                        Beli Sekarang
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="max-w-sm bg-white border border-gray-300 rounded-lg drop-shadow-md transition duration-300 ease-in-out hover:scale-105">
+                <a href="#">
+                    <img class="rounded-t-lg w-full h-72 object-cover" src="../garasibewok/public/images/parts/header.jpg" alt="" />
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">MOTO1 Package Bore Up</h5>
+                    </a>
+                    <p class="mb-3 font-normal text-gray-700">Paket bore-up lengkap dari MOTO1, termasuk silinder blok, piston, dan gasket. Cocok untuk meningkatkan kapasitas mesin secara signifikan dengan hasil tenaga yang lebih besar.</p>
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black rounded-lg focus:outline-none">
+                        Beli Sekarang
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <a href="index.php?page=parts" class="flex justify-center items-center">
+                <p class="text-white">Lihat semua</p>
+                <svg class="rtl:rotate-180 w-5 h-5 ms-3 pt-1 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="bg-black/80 flex flex-col justify-center mt-8">
+        <div class="container px-6 py-12 mx-auto">
+            <div>
+                <p class="font-medium text-white">Contact us</p>
+    
+                <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">Hubungi Kami</h1>
+    
+                <p class="mt-3 text-gray-500 dark:text-gray-400">Konsultasikan kendala motor anda pada kami!</p>
+            </div>
+    
+            <div class="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-3">
+                <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-1">
+                    <div>
+                        <span class="inline-block p-3 text-black rounded-full bg-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                            </svg>
+                        </span>
+    
+                        <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Email</h2>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Tim kami siap membantu anda.</p>
+                        <p class="mt-2 text-sm text-white">garasibewok@gmail.com</p>
+                    </div>
+    
+                    <div>
+                        <span class="inline-block p-3 text-black rounded-full bg-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                            </svg>
+                        </span>
+                        
+                        <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Workshop</h2>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Lokasi bengkel kami sangat mudah dijangkau.</p>
+                        <p class="mt-2 text-sm text-white">Jl. Ranjau No.9 5, RT.5/RW.4, Sumur Batu, Kec. Kemayoran, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10640</p>
+                    </div>
+    
+                    <div>
+                        <span class="inline-block p-3 text-black rounded-full bg-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                            </svg>
+                        </span>
+                        
+                        <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Phone</h2>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Senin s/d Sabtu dari pukul 08.00 s/d 17.00 WIB.</p>
+                        <p class="mt-2 text-sm text-white">+62 (888) 1452-631</p>
+                    </div>
+                </div>
+    
+                <div class="overflow-hidden rounded-lg lg:col-span-2 h-96 lg:h-auto">
+                    <iframe class="w-full h-96" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.769714131018!2d106.8694027748027!3d-6.16158859382563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f56109e8af6d%3A0xff5c10147a504e41!2sRafpolish!5e0!3m2!1sen!2sid!4v1736625665735!5m2!1sen!2sid" style="border:1;" allowfullscreen="allow" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-8 fixed bottom-0 w-full bg-white text-black text-center py-4">
+        © 2025 <span class="font-bold italic">GARASIBEWOK</span>. All Rights Reserved.
+    </footer>
+
+
+    <script>
+        document.querySelectorAll('.max-w-sm a.inline-flex').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const linkText = link.textContent.trim();
+
+                const title = link.closest('.max-w-sm').querySelector('h5').textContent.trim();
+
+                if (linkText === 'Baca lebih lanjut') {
+                    alert(`Anda telah memilih layanan "${title}"`);
+                } else if (linkText === 'Beli Sekarang') {
+                    alert(`Anda telah memilih part "${title}"`);
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</body>
+</html>

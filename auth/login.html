@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk | Garasi Bewok</title>
+    <link rel="icon" href="../public/images/logo/GB Logo.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="stylesheet" href="../public/css/beranda.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Section -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/graphik-trial" rel="stylesheet">
+
+</head>
+<body>
+    <div class="min-h-screen flex justify-center items-center">
+        <div class="flex flex-col">
+            <div class="flex justify-end mr-2">
+                <a href="../index.php?page=index" class="flex items-center text-black font-medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Kembali
+                </a>
+            </div>
+
+            <div class="w-96 max-w-sm mx-auto overflow-hidden bg-white rounded-lg border border-gray-500 shadow-md">
+                <div class="px-6 py-4">
+                    <div class="flex justify-center mx-auto">
+                        <h1 class="font-bold italic text-3xl">GARASIBEWOK</h1>
+                    </div>
+            
+                    <h3 class="mt-3 text-xl font-medium text-center text-black">Selamat Datang</h3>
+            
+                    <p class="mt-1 text-center text-black">Masuk atau Buat Akun!</p>
+            
+                    <form action="http://localhost/garasibewok/public/php/login.php" method="POST">
+                        <div class="w-full mt-4">
+                            <input class="block w-full px-4 py-2 mt-2 text-black placeholder-gray-500 bg-white border rounded-lg focus:border-black focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-black" name="email" type="email" placeholder="Email" aria-label="Email Address" />
+                        </div>
+            
+                        <div class="w-full mt-4 relative">
+                            <input class="block w-full px-4 py-2 mt-2 text-black placeholder-gray-500 bg-white border rounded-lg focus:border-black focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-black" name="password" id="password" type="password" placeholder="Kata Sandi" aria-label="Password" />
+                            <button type="button" id="togglePassword" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 focus:outline-none">
+                                <i class="fa fa-eye" id="eyeIcon"></i>
+                            </button>
+                        </div>
+            
+                        <div class="flex items-center justify-between mt-4">
+                            <a href="#" class="text-sm text-gray-600 hover:text-gray-500">Lupa Kata Sandi?</a>
+            
+                            <button class="px-6 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-black rounded-lg focus:outline-none focus:ring focus:ring-black focus:ring-opacity-50">
+                                Masuk
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            
+                <div class="flex items-center justify-center py-4 text-center bg-gray-50">
+                    <span class="text-sm text-gray-600">Belum memiliki akun? </span>
+            
+                    <a href="../auth/register.html" class="mx-2 text-sm font-bold text-black hover:underline">Buat Akun</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordField = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        });
+    </script>
+    
+</body>
+</html>
