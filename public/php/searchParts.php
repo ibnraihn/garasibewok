@@ -2,20 +2,20 @@
     // Parts Data
     $data = [
         [
-            'judul' => 'Blok MOTO1 + Casting Piston',
-            'deskripsi' => 'Blok mesin berkualitas tinggi dilengkapi dengan piston casting yang presisi. Cocok untuk meningkatkan performa mesin motor dengan daya tahan optimal dan efisiensi maksimal.',
+            'judul' => 'Blok MOTO1 MX-King + Forging Piston',
+            'deskripsi' => 'Blok mesin berkualitas tinggi dilengkapi dengan piston Forging yang presisi. Cocok untuk meningkatkan performa mesin motor dengan daya tahan optimal dan efisiensi maksimal.',
             'gambar' => '../garasibewok/public/images/parts/blok-seher.jpg'
         ],
 
         [
-            'judul' => 'Head SUMRacing + Valve',
+            'judul' => 'Head SUMRacing MX-King 25/22 + Valve',
             'deskripsi' => 'Kepala silinder SUMRacing lengkap dengan katup yang dirancang untuk mendukung performa motor balap. Memberikan aliran udara yang lebih baik dan daya output yang maksimal.',
             'gambar' => '../garasibewok/public/images/parts/paketan head.jpg'
         ],
 
         [
-            'judul' => 'Valve Spring Swedia',
-            'deskripsi' => 'Per yang dirancang untuk katup mesin motor dengan material berkualitas tinggi dari Swedia. Memberikan stabilitas katup pada putaran tinggi dan daya tahan yang lama penggunaan.',
+            'judul' => 'Valve Spring Samurai',
+            'deskripsi' => 'Per yang dirancang untuk katup mesin motor dengan material berkualitas tinggi dari Japan. Memberikan stabilitas katup pada putaran tinggi dan daya tahan yang lama penggunaan.',
             'gambar' => '../garasibewok/public/images/parts/klep.jpg'
         ],
 
@@ -26,8 +26,8 @@
         ],
 
         [
-            'judul' => 'MOTO1 Package Bore Up',
-            'deskripsi' => 'Paket bore-up lengkap dari MOTO1, termasuk silinder blok, piston, dan gasket. Cocok untuk meningkatkan kapasitas mesin secara signifikan dengan hasil tenaga yang lebih besar.',
+            'judul' => 'MOTO1 Package Bore Up RX-King',
+            'deskripsi' => 'Paket bore-up lengkap dari MOTO1 cocok untuk RX-King, termasuk silinder blok, piston, dan gasket. Cocok untuk meningkatkan kapasitas mesin secara signifikan dengan hasil tenaga yang lebih besar.',
             'gambar' => '../garasibewok/public/images/parts/header.jpg'
         ],
     ];
