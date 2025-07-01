@@ -43,7 +43,6 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `nama`, `email`, `nomor_telepon`, `password`, `created_at`) VALUES
 (2, 'Rafi Rizqallah Andila', 'rafirizqallahandilla@gmail.com', '085711705767', '$2y$10$aNB3.9Hpd.7dmuS3czN3zOULUUldA3NVThxEotqNVHRfIC.kyi5iC', '2025-01-11 21:52:54'),
 (3, 'Ibnu Raihan', 'ibnuraihan@gmail.com', '08123456789', '$2y$10$fhZ061gx19Ln9Y7cBPmFuubHhvTi5jJ2I/odWWatFJUX0HW4c8Zi2', '2025-01-13 18:07:29'),
-(4, 'test', 'test@gmail.com', '08123456789', '$2y$10$M/RfuPP9Yvk6E9YlLpoEdeoRQL5MhfPtgDpHf0zee2us0IWw34LKK', '2025-01-13 20:09:15');
 
 --
 -- Indexes for dumped tables
